@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/JairoCC/bookings/pkg/config"
-	"github.com/JairoCC/bookings/pkg/handlers/render"
 	"github.com/JairoCC/bookings/pkg/models"
+	"github.com/JairoCC/bookings/pkg/render"
 )
 
 // Repo the repository used by the handlers

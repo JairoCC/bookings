@@ -8,7 +8,7 @@ import (
 
 	"github.com/JairoCC/bookings/pkg/config"
 	"github.com/JairoCC/bookings/pkg/handlers"
-	"github.com/JairoCC/bookings/pkg/handlers/render"
+	"github.com/JairoCC/bookings/pkg/render"
 	"github.com/alexedwards/scs/v2"
 )
 
