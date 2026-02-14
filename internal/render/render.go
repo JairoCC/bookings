@@ -7,8 +7,9 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/JairoCC/bookings/pkg/config"
-	"github.com/JairoCC/bookings/pkg/models"
+	"github.com/JairoCC/bookings/internal/config"
+	"github.com/JairoCC/bookings/internal/models"
+	"github.com/justinas/nosurf"
 )
 
 var app *config.AppConfig
@@ -18,12 +19,13 @@ func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
-func AddDefaultData(td *models.TemplateData) *models.TemplateData {
+func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
+	td.CSRFToken = nosurf.Token(r)
 	return td
 }
 
 // RenderTemplate using html template
-func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string, td *models.TemplateData) {
 
 	var tc map[string]*template.Template
 	if app.UseCache {
@@ -38,10 +40,10 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 		log.Fatal(ok)
 	}
 
+	td = AddDefaultData(td, r)
+
 	buf := new(bytes.Buffer)
 	err := t.Execute(buf, td)
-
-	td = AddDefaultData(td)
 
 	if err != nil {
 		log.Println(err)
