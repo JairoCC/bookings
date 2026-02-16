@@ -1,0 +1,11 @@
+mode: set
+github.com/JairoCC/bookings/cmd/web/main.go:22.13,24.16 2 0
+github.com/JairoCC/bookings/cmd/web/main.go:24.16,26.3 1 0
+github.com/JairoCC/bookings/cmd/web/main.go:28.2,37.16 4 0
+github.com/JairoCC/bookings/cmd/web/main.go:37.16,39.3 1 0
+github.com/JairoCC/bookings/cmd/web/main.go:42.18,58.16 10 1
+github.com/JairoCC/bookings/cmd/web/main.go:58.16,61.3 2 0
+github.com/JairoCC/bookings/cmd/web/main.go:63.2,70.12 6 1
+github.com/JairoCC/bookings/cmd/web/middleware.go:10.45,21.2 3 1
+github.com/JairoCC/bookings/cmd/web/middleware.go:24.50,26.2 1 1
+github.com/JairoCC/bookings/cmd/web/routes.go:13.49,44.2 18 1
